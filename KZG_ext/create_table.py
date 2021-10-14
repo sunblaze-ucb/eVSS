@@ -4,7 +4,7 @@ s_time = []
 p_time = []
 v_time = []
 proof_size = []
-N = 12
+N = 20
 
 for i in range(5, N):
     
@@ -12,9 +12,9 @@ for i in range(5, N):
     f = open('log' + str(i) + '.txt')
 
     lines = f.readlines()
-    
+    print("Dealing for N = " + str(2**i))
     print(lines)
-    p = str(float(lines[4].split(' ')[-1]))
+    p = str(float(lines[-3].split(' ')[-1]))
     v = str(float(lines[-1].split(' ')[-1]))
     s = str(float(lines[1].split(' ')[-1]))
     print(p, v, s)
@@ -22,6 +22,8 @@ for i in range(5, N):
     p_time.append(p)
     v_time.append(v)
     s_time.append(s)
+
+    print('\n\n\n')
 
 
 lines = ['', '', '']

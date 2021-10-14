@@ -7,10 +7,11 @@ proof_size = []
 N = 21
 
 for i in range(10, N):
+
     os.system('./bfc ' + str(i + 1) + ' ' + str(i))
+    print('Testing for N = ' + str(2**i))
     os.system('./zk_proof fft.txt fft_meta.txt log' + str(i) + '.txt ' + str(i + 1) + ' ' + str(i))
     f = open('log' + str(i) + '.txt')
-
     lines = f.readlines()
     p, v, ps = lines[0].split(' ')
     p_time.append(p)

@@ -25,6 +25,13 @@ namespace prime_field
     void init_random()
     {
     }
+    field_element random()
+    {
+        field_element ret;
+        ret.real = (unsigned long long)rand() % mod;
+        ret.img = (unsigned long long)rand() % mod;
+        return ret;
+    }
     field_element random_real_only()
     {
         field_element ret;
