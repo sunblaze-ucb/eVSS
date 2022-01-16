@@ -1367,7 +1367,6 @@ bool zk_verifier::verify(const char* output_path)
 	{
 		fprintf(stderr, "Verification pass\n");
 		std::cerr << "Prove Time " << p -> total_time << std::endl;
-		std::cerr << "Verification rdl time " << verification_rdl_time << std::endl;
 		//verification rdl time is the non-parallel part of the circuit. In all of our experiments and most applications, it can be calculated in O(log n) or O(log^2 n) time. We didn't implement the fast method due to the deadline.
 		std::cerr << "Verification Time " << verification_time - verification_rdl_time << std::endl;
 		verifiers_fs[0].output("v0_proof.bin");
